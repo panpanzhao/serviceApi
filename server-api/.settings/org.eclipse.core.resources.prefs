@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/api.properties=UTF-8
+encoding//src/main/resources/datasource_jndi.xml=UTF-8
+encoding//src/main/resources/jdbc.properties=UTF-8
+encoding//src/main/resources/logback.xml=UTF-8
+encoding//src/main/webapp/WEB-INF/views/common/layouts/links.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/common/layouts/meta.jsp=UTF-8
+encoding//src/main/webapp/template/html/policy=UTF-8
+encoding//src/main/webapp/template/html/policy/cal/cal.html=UTF-8
+encoding//src/main/webapp/template/html/policy/cal/cal_benefit.html=UTF-8
+encoding//src/main/webapp/template/html/policy/cal/cal_diffPrice.html=UTF-8
+encoding//src/main/webapp/template/json/common/bankCode.json=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

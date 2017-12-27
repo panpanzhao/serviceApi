@@ -1,0 +1,144 @@
+<div class="bg_w ml10 mr10 b_ra5 mt5 page-shadow">
+	<div class="bx_main_top">{{basicGroup.name}}</div>
+	<div class="clearfix">
+		{{each basicGroup.inputAttr.inputList as input}}
+		<div class="page-group ml10 mr10 mt10 pb10 ">
+			<div class="pt10 f15  pr10 w70">{{input.name}}</div>
+			{{if input.code=="age"}}
+			<div class="page-group-input">
+				<div class="bx_main_ages ">
+					<span class="bx_main_agesL">
+	                    <select data-group="basicGroup" data-code="codeAge" data-type="SELECT" data-cal_flag="{{input.cal_flag}}"  data-min="{{input.limit[0]}}" data-max="{{input.limit[1]}}">
+	                    </select>
+              		</span>
+					<span class="bx_main_agesR">
+	                    <input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="" data-default_val="{{input.default_val}}" type="text"  class="bx_main_agestext" placeholder="{{input.name}}" readonly="readonly" />
+	                </span>
+				</div>
+			</div>
+			{{else if input.code=="job_type"}}
+			<div class="page-group-input arrow-r">
+				<span class="bx_main_text">
+					<input data-group="flagOGroup" data-code="job" data-type="POP"   type="text" class="bx_main_input" readonly="readonly" >
+					<input data-group="flagOGroup" data-code="profession" data-type="POP" type="hidden" data-value="2801002" data-default_val="2801002"  />
+					<s class="ui-arrow ui-arrow-r"><s></s></s>
+				</span>
+			</div>
+			{{else if input.comp_type=="RECT"}}
+			<div class="page-group-input">
+				 <div class="bx_main_way">
+				 	<input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}"   type="hidden"   />
+		        	<ul>
+		            	{{each input.val as val i}}
+		            	<li data-name="{{input.code}}" data-value="{{val}}"  class="{{val==input.default_val?'current':''}}" ><span>{{input.val_name[i]}}</span></li>
+		            	{{/each}}
+		            </ul>
+		        </div>
+			</div>
+			{{else if input.comp_type=="SELECT"}}
+			<div class="page-group-input">
+				<div class="bx_main_ages ">
+					<span class="bx_main_agesL w-100">
+	                    <select data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}" >
+	                        {{each input.val as val i}}
+	                        <option value="{{val}}" {{val==input.default_val?'selected':''}}>{{input.val_name[i]}}</option>
+		            		{{/each}}
+	                    </select>
+              		</span>
+              	</div>
+			</div>
+			{{else if input.comp_type=="INPUT"}}
+			<div class="page-group-input">
+				<span class="bx_main_text"><input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}" type="number" class="bx_main_input" ></span>
+			</div>
+			{{else}}
+			<div class="page-group-input">
+				<div class="bx_main_way">
+					<ul>   	
+			          <li class="current"><span data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" data-value="{{input.default_val}}" data-default_val="{{input.default_val}}" >{{input.val_name}}</span></li>
+			    	</ul>
+			    </div>
+		    </div>
+			{{/if}}
+			<div class="page-group-text f15 pl10  c-a19c9c">{{input.back_name}}</div>
+		</div>
+		{{/each}}
+
+		{{each basicGroup.inputAttr.inputMap as input}}
+		<div class="page-group ml10 mr10 mt10 pb10 ">
+			<div class="pt10 f15  pr10 w70">{{input.name}}</div>
+			{{if input.code=="age"}}
+			<div class="page-group-input">
+				<div class="bx_main_ages ">
+					<span class="bx_main_agesL">
+	                    <select data-group="basicGroup" data-code="codeAge" data-type="SELECT" data-cal_flag="{{input.cal_flag}}"  data-min="{{input.limit[0]}}" data-max="{{input.limit[1]}}">
+	                    </select>
+              		</span>
+					<span class="bx_main_agesR">
+	                    <input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="" data-default_val="{{input.default_val}}" type="text"  class="bx_main_agestext" placeholder="{{input.name}}" readonly="readonly" />
+	                </span>
+				</div>
+			</div>
+			{{else if input.code=="job_type"}}
+			<div class="page-group-input arrow-r">
+				<span class="bx_main_text">
+					<input data-group="flagOGroup" data-code="job" data-type="POP"   type="text" class="bx_main_input" readonly="readonly" >
+					<input data-group="flagOGroup" data-code="profession" data-type="POP" type="hidden" data-value="2801002" data-default_val="2801002"  />
+					<s class="ui-arrow ui-arrow-r"><s></s></s>
+				</span>
+			</div>
+			{{else if input.comp_type=="RECT"}}
+			<div class="page-group-input">
+				 <div class="bx_main_way">
+				 	<input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}"   type="hidden"   />
+		        	<ul>
+		            	{{each input.val as val i}}
+		            	<li data-name="{{input.code}}" data-value="{{val}}"  class="{{val==input.default_val?'current':''}}" ><span>{{input.val_name[i]}}</span></li>
+		            	{{/each}}
+		            </ul>
+		        </div>
+			</div>
+			{{else if input.comp_type=="SELECT"}}
+			<div class="page-group-input">
+				<div class="bx_main_ages ">
+					<span class="bx_main_agesL w-100">
+	                    <select data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}" >
+	                        {{each input.val as val i}}
+	                        <option value="{{val}}" {{val==input.default_val?'selected':''}}>{{input.val_name[i]}}</option>
+		            		{{/each}}
+	                    </select>
+              		</span>
+              	</div>
+			</div>
+			{{else if input.comp_type=="INPUT"}}
+			<div class="page-group-input">
+				<span class="bx_main_text"><input data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" value="{{input.default_val}}" data-default_val="{{input.default_val}}" type="number" class="bx_main_input" ></span>
+			</div>
+			{{else}}
+			<div class="page-group-input">
+				<div class="bx_main_way">
+					<ul>   	
+			          <li class="current"><span data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-cal_flag="{{input.cal_flag}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" data-value="{{input.default_val}}" data-default_val="{{input.default_val}}" >{{input.val_name}}</span></li>
+			    	</ul>
+			    </div>
+		    </div>
+			{{/if}}
+			<div class="page-group-text f15 pl10  c-a19c9c">{{input.back_name}}</div>
+		</div>
+		{{/each}}
+	</div>
+</div>
+
+<div class="calPrice">
+	<div class="health-fix page-price">
+		<a  style="font-size:16px;color:#666;">
+		{{each premGroup.inputAttr.inputList as input}}
+			{{input.name}}：<b  data-group="basicGroup" data-code="{{input.code}}" data-type="{{input.comp_type}}" data-short_name="{{input.name}}" data-back_name="{{input.back_name}}" data-val_text="" data-value="{{input.val}}" data-default_val="{{input.default_val}}" class="c-ffa456 f22">{{input.val}}</b>{{input.back_name}}
+		{{/each}}
+		</a>
+		<a id="calNextBtn" class="next">
+			<span>立即购买</span>
+		</a>
+	</div>
+</div>
+

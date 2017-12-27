@@ -1,0 +1,31 @@
+<div id="job-shadow" style="z-index:100" class="mask-shadow dn"></div>
+<div id="job_comp" class="job-con">
+	<div class="loc-tit bgc-ffa456 pr  f18 white pl45">
+		<i id="job_close"></i> 选择职业
+	</div>
+ 	<div class="page-group ml15 mr10 mt5 mb5">
+	<!-- 	<div class="page-group-text f15 pt5 loc-sel-ico">
+			<img src="{{imagesBasePath}}/search-ico.jpg" />
+		</div> -->
+		<div class="page-group-input f15   sel-input ">
+			<!-- <input id="job_input" type="text" placeholder="请输入职业名称" /> -->
+			<select id="job_select" class="f20">
+				<option data-jobId="0">选择常用职业</option>
+				<option data-jobId="155409,155410,155412,">学生</option>
+				<option data-jobId="155409,155410,155411,">教师</option>
+				<option data-jobId="154572,154573,154577,">工程师</option>
+				<option data-jobId="155569,155577,155580,">律师</option>
+			</select>
+		</div>
+	</div>
+	<p id="job_bnt" class="bgc-d8d8d8 pt10 pl15 c-303030 pb10 f15">
+		请选择职业:&nbsp;&nbsp;<a id="job_all" data-parentId="0" >重选</a>
+	</p>
+	<div class="loc-job">
+		<ul id="job_list" class="job-list">
+<!-- 			{{each job as item}}
+			<li>{{item.name}}</li>
+			{{/each}} -->
+		</ul>
+	</div>
+</div>

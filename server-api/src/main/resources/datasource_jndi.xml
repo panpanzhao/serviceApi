@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/jee 
+			http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+	<!--用于生产环境连接JNDI数据源 -->
+	<!-- 注意,如果配置了数据源中<use-java-context>true</use-java-context>,则在JBOSS JVM之外无法获取数据源,建议设置为false-->
+	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/ebiz" />
+	<jee:jndi-lookup id="logDataSource" jndi-name="jdbc/ebiz-log" />
+	<jee:jndi-lookup id="quartzDataSource" jndi-name="jdbc/ebiz-log" />
+</beans>

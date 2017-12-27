@@ -1,0 +1,121 @@
+{{each benefits_group as product}}
+<div class="pr pb55 " style="display:{{product.data.length<=0?'none':''}}">
+	<div class="" >
+		<div class="box-shadow feekback-detail   pb30 ">
+			{{each product.data as data}}
+				{{if data.type=="h1"}}
+					<p class="c-4c4b4b feedback-bz-hand bor-bt-df pl10 ml5 mr5 db mb10 pb10">
+						<img src="{{imagesBasePath}}/feekback-hand.png" />{{data.data.name}}
+					</p>
+				{{else if data.type=="h2"}}
+					<ul class="pl20 bz-list">
+						<li>{{data.data.name}}{{data.data.description}}</li>
+					</ul>
+				{{else if data.type=="table"}}
+					<p class="c-4c4b4b feedback-bz-hand bor-bt-df pl10 ml5 mr5 db mb10 pb10">
+						<img src="{{imagesBasePath}}/feekback-hand.png" />{{data.title}}
+					</p>
+					<table class="benefitTable">
+						{{each data.tableData as row i}}
+						<tr>
+							{{each row as col}}
+								{{if col!=null}}
+								<{{col.type}} {{col.attr}}>
+									{{col.data}}
+									{{if col.itfShare==1}}<i class="shareImg"></i>{{/if}}
+								</{{col.type}}>
+								{{/if}}
+							{{/each}}
+						</tr>
+						{{/each}}
+					</table>
+				{{else if data.type=="content"}}
+					<p class="pl20 pr20 f12">
+						{{data.data}}
+					</p>
+				{{else if data.type=="pic"}}
+					<p class="pl20 pr20 f12 mb0 tc">
+						<img alt="" src="{{imagesServerPath}}/akb_pics/{{data.data.name}}">
+					</p>
+				{{else if data.type=="bnft"}}
+					<p class="c-4c4b4b f18 tc">
+						{{data.data.description}}
+					</p>
+					<p class="pl20 pr20 f12 mb0">
+						<img alt="" src="{{imagesServerPath}}/akb_pics/{{data.data.name}}">
+					</p>
+					<div class="page-group ml10 mr10 mt10 user-price f15">
+						<div class="page-group-text f15  pr10 w150 tr">被保人：</div>
+						<div class="page-group-input page-group-select pr">
+							<span id="age_show">{{bnft_list.contents[bnft_list.ageFlag][ageIndex]}}</span><i class="tip-down ml10"></i> 岁时
+							<select id="age_selecter">
+								{{each bnft_list.contents[bnft_list.ageFlag] as content i}}
+								<option value="{{i}}" {{if ageIndex==i}}selected{{/if}}>{{content}}</option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+					<div id="ageBnftTemplate">
+					{{each bnft_list.titles as title}} 
+						{{if title.show_type!="0"}}
+						<div class="page-group ml10 mr10 mt10 user-price f15">
+							<div class="page-group-text f15  pr10 w150 tr">{{title.name}}：</div>
+							<div class="page-group-input">
+								<span>
+									{{if title.pre_type=="2"}}
+										{{bnft_list.contents[agePre+agePre+title.code][ageIndex]}}
+									{{else if title.pre_type=="1"}}
+										{{bnft_list.contents[agePre+title.code][ageIndex]}}
+									{{else}}
+										{{bnft_list.contents[title.code][ageIndex]}}
+									{{/if}}
+								</span>
+								元
+							</div>
+						</div>
+						{{/if}}
+					{{/each}}
+					</div>
+					{{if bnft_list.preFlag=="1"}}
+					<div class="page-group mt10 ml10 mr10 f15">
+						<!-- <div class="page-group-text pr20"><span class="rate">%</span> 利率</div> -->
+						<div class="page-group-input">
+							<ul id="bnft_age_select"  class="bx-rate ">
+								<li class="{{agePre=='low_'?'curr':''}}" data_pre="low_">底</li>
+								<li class="{{agePre=='mid_'?'curr':''}}" data_pre="mid_">中</li>
+								<li class="{{agePre=='high_'?'curr':''}}" data_pre="high_">高</li>
+							</ul>
+						</div>
+					</div>
+					{{/if}}
+					<div class="page-group ml10 mr10 mt30 user-price f15">
+						<div class="page-group-text pl10 pr10 f30 del">-</div>
+						<div class="page-group-input swiper-no-swiping">
+							<input type="range" value="{{ageIndex}}" min="0" max="{{bnft_list.contents[bnft_list.ageFlag].length-1}}" data-rangeslider>
+							<output class="dn">{{ageIndex}}</output>
+						</div>
+						<div class="page-group-text f30 add pl10 pr10">+</div>
+					</div>
+					<p class="mt10 tc pb10 ">
+						<span class="red2">*</span> 拖拽按钮查看不同年龄的保单利益。
+					</p>
+					<div class="tc mb10 btn-look f12 ">
+						<a href="javascript:void(0)" id="bnft_show" class="pl20 pr20 f12"><img src="{{imagesBasePath}}/fb-hand-ico.png" /> 查看保障利益演示表</a>
+					</div>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+	<div class="health-h">
+		<div class="health-fix">
+			<a href="javascript:$('#bottomPage_close').click();" class="prev" style="position:relative;">
+				<span>返回</span>
+			</a>
+			<a href="javascript:$('#bottomPage_close').click();$('#calNextBtn').click();" class="next">
+				<span>立即购买</span>
+			</a>
+		</div>
+	</div>
+
+</div>
+{{/each}}

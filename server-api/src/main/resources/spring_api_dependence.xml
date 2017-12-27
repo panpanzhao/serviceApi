@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+			
+	 <context:property-placeholder location="classpath:api_private.properties" ignore-unresolvable="true"/>
+	<!--import resource="classpath*:efa-web_normal.xml" //所有配置文件
+	-->
+	<import resource="classpath*:efa-core_base.xml" />
+	<import resource="classpath*:efa_message_resource.xml" />
+	<import resource="classpath*:efa-core_event_async.xml" />
+	<import resource="classpath*:efa-aop_spring_aop.xml" />
+	<import resource="classpath*:efa-exception_app.xml" />
+	<import resource="classpath*:efa_web_base.xml" />
+	<import resource="classpath*:efa_mail_common.xml" />
+	
+	
+	<import resource="classpath*:efa_datasource_oracle_c3po.xml"/>
+	<import resource="classpath*:efa_orm_ibatis_oracle_c3p0.xml"/>
+	
+	<import resource="classpath*:efa-security_jcaptcha.xml"/>
+	
+	
+	
+</beans>

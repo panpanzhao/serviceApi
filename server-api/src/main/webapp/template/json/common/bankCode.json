@@ -1,0 +1,62 @@
+[
+  {
+    "text": "招商银行",
+    "value": "CMB"
+  },
+  {
+    "text": "中国工商银行",
+    "value": "ICBC"
+  },
+  {
+    "text": "中国农业银行",
+    "value": "ABC"
+  },
+  {
+    "text": "中国建设银行",
+    "value": "CCB"
+  },
+  {
+    "text": "中国银行",
+    "value": "BOC"
+  },
+  {
+    "text": "中国交通银行",
+    "value": "BCOM"
+  },
+  {
+    "text": "兴业银行",
+    "value": "CIB"
+  },
+  {
+    "text": "中信银行",
+    "value": "CITIC"
+  },
+  {
+    "text": "中国光大银行",
+    "value": "CEB"
+  },
+  {
+    "text": "平安银行",
+    "value": "PAB"
+  },
+  {
+    "text": "中国邮政储蓄银行",
+    "value": "PSBC"
+  },
+  {
+    "text": "浦东发展银行",
+    "value": "SPDB"
+  },
+  {
+    "text": "民生银行",
+    "value": "CMBC"
+  },
+  {
+    "text": "广发银行",
+    "value": "GDB"
+  },
+  {
+    "text": "华夏银行",
+    "value": "HXB"
+  }
+]

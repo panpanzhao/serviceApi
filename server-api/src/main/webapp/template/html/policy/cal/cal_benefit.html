@@ -1,0 +1,12 @@
+<dl class="page-group ml5 mr5  page-fjx mt10 c-dashed-b-ea">
+	<dt>险种</dt>
+	<dt>保额</dt>
+	<dt>保费</dt>
+	<dt>交费期限</dt>
+	{{each benefits as benefit}}
+	<dd>{{benefit.name}}</dd>
+	<dd>{{benefit.amount}}</dd>
+	<dd>{{benefit.itf_prem}}</dd>
+	<dd>{{benefit.itf_payendyear}}</dd>
+	{{/each}}
+</dl>
